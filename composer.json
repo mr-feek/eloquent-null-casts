@@ -1,0 +1,44 @@
+{
+    "name": "mr-feek/eloquent-null-casts",
+    "description": "Model attributes that are null will be cast if they are listed in the casts array. Unlike default Eloquent.",
+    "keywords": [
+        "mr-feek",
+        "eloquent-null-casts"
+    ],
+    "homepage": "https://github.com/mr-feek/eloquent-null-casts",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fiachra McDermott",
+            "email": "fpm5022@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/database": "^5.8|^6.0|^7.0",
+        "illuminate/support": "^5.8|^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8|^4.0|^5.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MrFeek\\EloquentNullCasts\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MrFeek\\EloquentNullCasts\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
