@@ -7,15 +7,16 @@ use MrFeek\EloquentNullCasts\CastsNullAttributes;
 
 final class UserWithTrait extends Model
 {
+    use CastsNullAttributes;
 
     protected $table = 'users';
     public $timestamps = false;
 
-    protected $casts = [
-        'deleted' => 'boolean',
-    ];
-
-    protected $attributes = [
-        'deleted' => null,
-    ];
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->casts = [
+            'deleted' => 'boolean',
+        ];
+    }
 }
