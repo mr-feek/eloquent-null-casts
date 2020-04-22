@@ -15,7 +15,7 @@ trait CastsNullAttributes
     {
         $castType = $this->getCastType($key);
 
-        if (is_null($value) && in_array($castType, static::$primitiveCastTypes)) {
+        if (is_null($value)) {
             switch ($castType) {
                 case 'int':
                 case 'integer':
@@ -40,6 +40,7 @@ trait CastsNullAttributes
                 case 'datetime':
                 case 'custom_datetime':
                 case 'timestamp':
+                default:
                     // we can't safely cast these types, so let the parent handle them if it can
                     break;
             }
